@@ -277,6 +277,44 @@ int main()
 
 }
 
+int Task1()
+{
+//Задано одновимірний масив А розміру N. 
+// Знайти серед всіх від’ємних максимальний
+//елемент масиву та його індекс.
+
+    int* a;
+    int* b;
+    int n, mm, mmi=0, ib=0;
+    cout << "Enter n"<<endl;
+    cin >> n;
+    a = new int[n];
+    b = new int[n];
+    if (a == nullptr) exit(1);
+    for (int i = 0; i < n; i++)
+    {
+        cout << "Int " << i;
+        cin >> a[i];
+    }
+    for (int i = 0; i < n; i++)
+    {
+        mm = a[0];
+        if (a[i] <= mm)
+        {
+            b[ib] = a[i];
+            ib++;
+        }
+    }
+    mm = b[0];
+    for (int i = 0; i < ib; i++)
+    {
+        if (mm <= b[i]) mm = b[i];
+    }
+    cout << "Max min:" << mm << "\nIndex of mm:" << ib;
+}
+
+
+
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
 
